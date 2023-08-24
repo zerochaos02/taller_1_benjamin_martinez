@@ -5,8 +5,13 @@ public class Main {
         menu();
     }
 
-    public static void crearMatrizCartas() {
-
+    public static String[][] crearMatrizCartas() {
+        String mazo[][] = new String[2][12];
+        for (int fila=0; fila < 12;fila++){
+            mazo[fila][0] = "dato 0";
+            mazo[fila][1] = "dato 1";
+        }
+        return mazo;
     }
 
     public static void agregarCartas(String nombreCarta, String puntaje) {
@@ -27,21 +32,24 @@ public class Main {
     public static boolean salir() {
         return true;
     }
+    public static String input() {
+        Scanner sn = new Scanner(System.in);
+        String input = sn.next();
+        return input;
+    }
 
     public static void menu() {
-        Scanner sn = new Scanner(System.in);
         boolean salir = false;
-        int opcion; //Guardaremos la opcion del usuario
         while (!salir) {
             System.out.println("1. Jugar con 2 personas");
             System.out.println("2. Salir");
             System.out.println("Escribe una de las opciones");
-            opcion = sn.nextInt();
+            String opcion = input();
             switch (opcion) {
-                case 1:
+                case "1":
                     System.out.println("Has seleccionado la opcion 1");
                     break;
-                case 2:
+                case "2":
                     salir = salir();
                     break;
                 default:

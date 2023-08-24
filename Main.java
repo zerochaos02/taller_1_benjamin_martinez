@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class Main {
@@ -14,18 +15,30 @@ public class Main {
         return mazo;
     }
 
-    public static void agregarCartas(String nombreCarta, String puntaje) {
-
+    public static void agregarCartas(String nombreCarta, String puntaje, String[][] mazo) {
+        int largo = mazo[0].length;
+        mazo[largo][0] = nombreCarta;
+        mazo[largo][1] = puntaje;
+        return mazo;
     }
-
-    public static void inicializarCartasJuego() {
-
+    public static String[][] inicializarCartasJuego(String[][] matriz) {
+        matriz = agregarCartas("Carta A","11",matriz);
+        matriz = agregarCartas("Carta 2","2",matriz);
+        matriz = agregarCartas("Carta 3","3",matriz);
+        matriz = agregarCartas("Carta 4","4",matriz);
+        matriz = agregarCartas("Carta 5","5",matriz);
+        matriz = agregarCartas("Carta 6","6",matriz);
+        matriz = agregarCartas("Carta 7","7",matriz);
+        matriz = agregarCartas("Carta 8","8",matriz);
+        matriz = agregarCartas("Carta 8","9",matriz);
+        matriz = agregarCartas("Carta J","10",matriz);
+        matriz = agregarCartas("Carta Q","10",matriz);
+        matriz = agregarCartas("Carta K","10",matriz);
+        return matriz;
     }
-
-    public static void obtenerCartas() {
-
+    public static String[] obtenerCartas(String[][] mazo) {
+        String[] cartas = {mazo[][1],mazo[][1],mazo[][1]};
     }
-
     public static void jugar() {
 
     }
@@ -57,4 +70,5 @@ public class Main {
             }
         }
     }
+
 }
